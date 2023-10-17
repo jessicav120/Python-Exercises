@@ -1,0 +1,25 @@
+def mode(nums):
+    """Return most-common number in list.
+
+    For this function, there will always be a single-most-common value;
+    you do not need to worry about handling cases where more than one item
+    occurs the same number of times.
+
+        >>> mode([1, 2, 1])
+        1
+
+        >>> mode([2, 2, 3, 3, 2])
+        2
+    """
+    #collect a count of nums
+    count = {}
+    for num in nums:
+        count[num] = nums.count(num)
+    
+    # find the max num
+    max_num = max(count.values())
+
+    #return most frequent num
+    for num in count.keys():
+        if count[num] == max_num:
+            return num
